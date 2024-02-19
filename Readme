@@ -20,7 +20,7 @@ https://github.com/bitcoin-pow/BitcoinPoW/releases
 [INFO]
 
 🔘 Transaction amount: 550μBTCW
-🔘 Dev fee: 3% (every 100 sent utxos, 3 (550μBTCW) is sent to developer wallet)
+🔘 Dev fee: 3% (every 33 sent utxos, 1 (550μBTCW) is sent to developer wallet)
 🔬 Dev fee will ensure continued support of BitcoinPoWFuel, bug fixes, improvements and new releases.
 
 [DESCRIPTION]
