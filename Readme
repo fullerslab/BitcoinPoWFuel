@@ -1,0 +1,102 @@
+BitcoinPoWFuel - Smart utxos sender
+-----------------------------------
+Fill your mining wallet!
+
+[OS]
+
+✅ Linux
+✅ Windows
+
+[PREREQUISITES]
+
+🔘 .NET Runtime 8.0 (Linux, Windows)
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
+[REQUISITES]
+
+🔘 BitcoinPoW (daemon, cli)
+https://github.com/bitcoin-pow/BitcoinPoW/releases
+
+[INFO]
+
+🔘 Transaction amount: 550μBTCW
+🔘 Dev fee: 3% (every 32 sent utxos, 1 (550μBTCW) is sent to developer wallet)
+🔬 Dev fee will ensure continued support of BitcoinPoWFuel, bug fixes, improvements and new releases.
+
+[DESCRIPTION]
+
+BitcoinPoWFuel is able to send thousands of utxos every block, automatically. Set it with your preferences, and leave it running, it will do the rest. If sender wallet balance runs out, BitcoinPoWFuel will suspend to work until you send new funds to the sender wallet.
+
+[INSTRUCTIONS]
+
+- Create a sender wallet
+- Create/edit bitcoin-pow.conf
+- Start sender wallet daemon
+- Wait for full sync
+- Send funds to the sender wallet
+- Wait 1 confirmation
+- Create addresses.txt file
+- Configure and start BitcoinPoWFuel (using a forced feerate to start)
+
+[ADDRESSES]
+
+Create an addresses file (e.g: my_addresses.txt), and put in it your addresses (MAX 2660), one per line. Optionally, you can also specify a label, separating it from the address using a '.':
+
+12tAfpMqDAdZTBiwPnxiY2pPFxBCbyDnoa.Right1
+1GspcmKR8mLxHCnjkx4wtq4nCpQgQ5EPgd.Right2
+1K6Vdsf7U9gUSivpTxvCt2A7UTN7g47jmJ.Right3
+12vJ3DkyE4LwwkcAodLvz4ThRDNxZD5HS4.Right4
+
+[CONFIG]
+
+You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file with these 11 arguments:
+
+-walletdir
+Directory of sender wallet
+
+-estimatedfeemultiplier
+Increase the current network fee using this multiplier, set it to 1 to use the fee as it, or set a <1 value to decrease the estimated network fee
+
+-conftarget
+Confirmation target in blocks (1-6)(if 6, BitcoinPoWFuel will use 6 blocks estimated fee)
+
+-minfeerate
+Min fee_rate limit (sat/vB), if network fee is smaller than minfeerate, BitcoinPoWFuel will use minfeerate. Setting to 0 => not set
+
+-forcedfeerate
+Set it to force the feerate and discard estimated network fee (0 => not set, >0 => discard estimated fee, and set this feerate)
+
+-maxfeerate
+Max fee_rate limit (sat/vB), if network fee is greater than maxfeerate, no transactions will be send. Setting to 0 => unlimited
+
+-addressespath
+Path to addresses.txt file
+  
+[EXAMPLES]
+
+🔘 Windows (.bat)
+
+BitcoinPoWFuel.exe -walletdir E:\BTCW\sender_wallet -conftarget 6 -estimatedfeemultiplier 1.03 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -addressespath E:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+
+🔘 Linux (.sh)
+
+./BitcoinPoWFuel -walletdir /home/desktop/btcw/sender_wallet -conftarget 4 -estimatedfeemultiplier 1.02 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+
+[COMMANDS]
+
+Pressing these keys will result in:
+
+🔘 b => balance
+'b' pressed => Balance: 17.09458004 BTCW (Estimated txs: 2391)(Run out in 29 send(s) or ~2 block(s))
+
+🔘 i => info
+'i' pressed => Utxos: 2135  Current height: 10557  Last send: 10556  Max fee_rate: 8900 sat/vB  Min fee_rate: not set  Forced fee_rate: not set  Confirmation target: 6 block(s)  Total spent: 5.30961707 BTCW (248694 miBTCW@tx)
+
+🔘 f => fee
+'f' pressed => Estimated network fee (6 block(s)): 8178 sat/vB (Send cost: 5.96376718 BTCW (2135 utxo(s)))  My fee: 7279 sat/vB (Send cost: 5.30904386 BTCW (2135 utxo(s)))
+
+🔘 a => show addresses
+'a' pressed => Addresses [4]:
+
+🔘 q => quit
+'q' pressed => Shutting down...
