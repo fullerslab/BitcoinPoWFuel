@@ -56,7 +56,7 @@ You can start BitcoinPoWFuel without arguments, setting them at every startup (p
 Directory of sender wallet
 
 -estimatedfeemultiplier
-Increase the current network fee using this multiplier, set it to 1 to use the fee as it, or set a <1 value to decrease the estimated network fee
+Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, >1 to use an increased value or <1 to use a decreased value.
 
 -conftarget
 Confirmation target in blocks (1-6)(if 6, BitcoinPoWFuel will use 6 blocks estimated fee)
