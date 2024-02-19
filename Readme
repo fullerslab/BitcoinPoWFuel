@@ -72,6 +72,18 @@ Max fee_rate limit (sat/vB), if network fee is greater than maxfeerate, no trans
 
 -addressespath
 Path to addresses.txt file
+
+-rpcip
+RPC server ip
+
+-rpcport
+RPC server port
+
+-rpcusername
+RPC server username
+
+-rpcpassword
+RPC server password
   
 [EXAMPLES]
 
