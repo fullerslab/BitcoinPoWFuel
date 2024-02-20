@@ -1,6 +1,6 @@
 BitcoinPoWFuel - Smart utxos sender
 -----------------------------------
-Fill your mining wallet fast!
+Get your mining wallet(s) ready using BitcoinPoWFuel and start mining BitcoinPoW!
 
 [OS]
 
@@ -50,7 +50,7 @@ Create an addresses file (e.g: my_addresses.txt), and put in it your addresses (
 
 [CONFIG]
 
-You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file with these 11 arguments:
+You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file with these 12 arguments:
 
 -walletdir
 Directory of sender wallet
@@ -66,6 +66,9 @@ Min fee_rate limit (sat/vB), if network fee is smaller than minfeerate, BitcoinP
 
 -forcedfeerate
 Set it to force the feerate and discard estimated network fee (0 => not set, >0 => discard estimated fee, and set this feerate)
+
+-utxostarget
+Suspend sending when sent utxos is equal or greater than utxosarget value (e.g: 2000)(0 => unlimited)
 
 -maxfeerate
 Max fee_rate limit (sat/vB), if network fee is greater than maxfeerate, no transactions will be send. Setting to 0 => unlimited
