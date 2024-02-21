@@ -37,7 +37,7 @@ BitcoinPoWFuel is able to send thousands of utxos every block, automatically. Se
 - Send funds to the sender wallet
 - Wait 1 confirmation
 - Create addresses.txt file
-- Configure and start BitcoinPoWFuel (using a forced feerate to start)
+- Configure and start BitcoinPoWFuel
 
 [ADDRESSES]
 
