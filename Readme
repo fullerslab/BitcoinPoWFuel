@@ -52,41 +52,41 @@ Create an addresses file (e.g: my_addresses.txt), and put in it your addresses (
 
 You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file with these 12 arguments:
 
--walletdir
-Directory of sender wallet
+-walletdir (string)
+Directory of sender wallet (e.g: D:\BTCW\sender_wallet)
 
--estimatedfeemultiplier
-Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, >1 to use an increased value or <1 to use a decreased value.
+-estimatedfeemultiplier (numeric)
+Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, >1 to use an increased value or <1 to use a decreased value (e.g: 1)
 
--conftarget
-Confirmation target in blocks (1-6)(if 6, BitcoinPoWFuel will use 6 blocks estimated fee)
+-conftarget (numeric)
+Confirmation target in blocks (1-6)(if 6, BitcoinPoWFuel will use 6 blocks estimated fee) (e.g: 1)
 
--minfeerate
-Min fee_rate limit (sat/vB), if network fee is smaller than minfeerate, BitcoinPoWFuel will use minfeerate. Setting to 0 => not set
+-minfeerate (numeric)
+Min fee_rate limit (sat/vB), if network fee is smaller than minfeerate, BitcoinPoWFuel will use minfeerate. Setting to 0 => not set (e.g: 30000)
 
--forcedfeerate
-Set it to force the feerate and discard estimated network fee (0 => not set, >0 => discard estimated fee, and set this feerate)
+-forcedfeerate (numeric)
+Set it to force the feerate and discard estimated network fee (0 => not set, >0 => discard estimated fee, and set this feerate) (e.g: 12000)
 
--utxostarget
-Suspend sending when sent utxos is equal or greater than utxosarget value (e.g: 2000)(0 => unlimited)
+-utxostarget (numeric)
+Suspend sending when sent utxos is equal or greater than utxosarget value (e.g: 2000)(0 => unlimited) (e.g: 250000)
 
--maxfeerate
-Max fee_rate limit (sat/vB), if network fee is greater than maxfeerate, no transactions will be send. Setting to 0 => unlimited
+-maxfeerate (numeric)
+Max fee_rate limit (sat/vB), if network fee is greater than maxfeerate, no transactions will be send. Setting to 0 => unlimited (e.g: 35000)
 
--addressespath
-Path to addresses.txt file
+-addressespath (string)
+Path to addresses.txt file (e.g: D:\BTCW\my_addresses.txt)
 
--rpcip
-RPC server ip
+-rpcip (string)
+RPC server ip (e.g: 127.0.0.1)
 
--rpcport
-RPC server port
+-rpcport (numeric)
+RPC server port (e.g: 8989)
 
--rpcusername
-RPC server username
+-rpcusername (string)
+RPC server username (e.g: user)
 
--rpcpassword
-RPC server password
+-rpcpassword (string)
+RPC server password (e.g: password)
   
 [EXAMPLES]
 
