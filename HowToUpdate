@@ -1,0 +1,9 @@
+------------------------------------------------------------
+
+- Download the new version 7.z archive
+- Exctract all files
+- Close BitcoinPoWFuel (you can leave bitcoin-powd running)
+- Replace all BitcoinPoWFuel files with the new ones
+- (Re)Start BitcoinPoWFuel or .bat/.sh
+
+-------- Updated! Enjoy new version 🍻 ---------------------
