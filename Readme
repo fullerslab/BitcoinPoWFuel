@@ -41,7 +41,7 @@ BitcoinPoWFuel is able to send thousands of utxos every block, automatically. Se
 
 [ADDRESSES]
 
-Create an addresses file (e.g: my_addresses.txt), and put in it your addresses (MAX 2580), one per line. Optionally, you can also specify a label, separating it from the address using a '.':
+Create an addresses file (e.g: my_addresses.txt), and put your addresses (MAX 2580) into, one per line. Optionally, you can also specify a label, separating it from the address using a '.':
 
 12tAfpMqDAdZTBiwPnxiY2pPFxBCbyDnoa.Right1
 1GspcmKR8mLxHCnjkx4wtq4nCpQgQ5EPgd.Right2
