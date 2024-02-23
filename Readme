@@ -62,7 +62,7 @@ You can start BitcoinPoWFuel without arguments, setting them at every startup (p
 Directory of sender wallet (e.g: D:\BTCW\sender_wallet_data_dir)
 
 -estimatedfeemultiplier (numeric)
-Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, >1 to use an increased value or <1 to use a decreased value (e.g: 1)
+Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, to a value >1 to use increase it or to a value <1 to use a decreased value (e.g: 1)
 
 -conftarget (numeric)
 Confirmation target in blocks (1-6)(if 6, BitcoinPoWFuel will use 6 blocks estimated fee) (e.g: 1)
@@ -98,11 +98,11 @@ RPC server password (e.g: password)
 
 🔘 Windows (.bat)
 
-BitcoinPoWFuel.exe -walletdir D:\BTCW\sender_wallet_data_dir -conftarget 6 -estimatedfeemultiplier 1.03 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -addressespath E:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+BitcoinPoWFuel.exe -walletdir D:\BTCW\sender_wallet_data_dir -conftarget 6 -estimatedfeemultiplier 1.05 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -addressespath D:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 🔘 Linux (.sh)
 
-./BitcoinPoWFuel -walletdir /home/desktop/btcw/sender_wallet_data_dir -conftarget 4 -estimatedfeemultiplier 1.02 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+./BitcoinPoWFuel -walletdir /home/desktop/btcw/sender_wallet_data_dir -conftarget 4 -estimatedfeemultiplier 0.97 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 [COMMANDS]
 
