@@ -30,9 +30,9 @@ BitcoinPoWFuel is able to send thousands of utxos every block, automatically. Se
 [INSTRUCTIONS]
 
 - Create a BTCW sender wallet
-- Create/edit bitcoin-pow.conf (https://github.com/fullerslab/BitcoinPoWFuel/blob/main/bitcoin-pow.conf)
+- Create/edit bitcoin-pow.conf file (https://github.com/fullerslab/BitcoinPoWFuel/blob/main/bitcoin-pow.conf)
 - Place bitcoin-pow.conf file in sender wallet data directory (default location)
-- Start sender wallet daemon using a .bat file:
+- Start BTCW sender wallet daemon using a .bat file containing:
 
 🔘 Linux
 ./bitcoin-powd --datadir=$your_data_dir
@@ -56,10 +56,10 @@ Create an addresses file (e.g: my_addresses.txt), and put your addresses (MAX 25
 
 [CONFIG]
 
-You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file with these 12 arguments:
+You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file containing these 12 arguments:
 
 -walletdir (string)
-Directory of sender wallet (e.g: D:\BTCW\sender_wallet)
+Directory of sender wallet (e.g: D:\BTCW\sender_wallet_data_dir)
 
 -estimatedfeemultiplier (numeric)
 Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, >1 to use an increased value or <1 to use a decreased value (e.g: 1)
@@ -98,11 +98,11 @@ RPC server password (e.g: password)
 
 🔘 Windows (.bat)
 
-BitcoinPoWFuel.exe -walletdir E:\BTCW\sender_wallet -conftarget 6 -estimatedfeemultiplier 1.03 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -addressespath E:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+BitcoinPoWFuel.exe -walletdir D:\BTCW\sender_wallet_data_dir -conftarget 6 -estimatedfeemultiplier 1.03 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -addressespath E:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 🔘 Linux (.sh)
 
-./BitcoinPoWFuel -walletdir /home/desktop/btcw/sender_wallet -conftarget 4 -estimatedfeemultiplier 1.02 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+./BitcoinPoWFuel -walletdir /home/desktop/btcw/sender_wallet_data_dir -conftarget 4 -estimatedfeemultiplier 1.02 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 [COMMANDS]
 
