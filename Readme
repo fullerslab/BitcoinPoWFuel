@@ -29,15 +29,21 @@ BitcoinPoWFuel is able to send thousands of utxos every block, automatically. Se
 
 [INSTRUCTIONS]
 
-- Create a sender wallet
+- Create a BTCW sender wallet
 - Create/edit bitcoin-pow.conf (https://github.com/fullerslab/BitcoinPoWFuel/blob/main/bitcoin-pow.conf)
-- Place bitcoin-pow.conf file in sender wallet data directory
-- Start sender wallet daemon
-- Wait for full sync
+- Place bitcoin-pow.conf file in sender wallet data directory (default location)
+- Start sender wallet daemon using a .bat file:
+
+🔘 Linux
+./bitcoin-powd --datadir=$your_data_dir
+🔘 Windows
+bitcoin-powd.exe --datadir=$your_data_dir
+
+- Wait for full sync (progress=1.0)
 - Send funds to the sender wallet
 - Wait 1 confirmation
 - Create addresses.txt file
-- Configure and start BitcoinPoWFuel
+- Configure and start BitcoinPoWFuel (bitcoin-powd must be running and rpc listening)
 
 [ADDRESSES]
 
