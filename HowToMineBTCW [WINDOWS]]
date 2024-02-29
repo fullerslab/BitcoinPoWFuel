@@ -1,0 +1,86 @@
+[REQUIREMENTS]
+
+1) Download and install:
+🔘 .NET Runtime 8.0 (Windows)
+https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+
+2) Download latest release of BitcoinPoW (bitcoin-powd.exe, bitcoin-pow-cli.exe, bitcoin-pow-qt.exe):
+🔘 https://github.com/bitcoin-pow/BitcoinPoW/releases
+
+3) Move downloaded BitcoinPoW files (3 files) in a folder, named 'btcw'
+
+4) Download latest release of BitcoinPoWFuel:
+🔘 https://github.com/fullerslab/BitcoinPoWFuel/releases
+
+5) Exctract BitcoinPoWFuel .7z archive in a folder, named 'BitcoinPoWFuel'
+
+(If you have already a sender wallet, go to 18)
+
+[CREATE SENDER WALLET]
+
+6) Create a .bat file in 'btcw' folder:
+
+   - Right click in 'btcw' folder, new text document
+   - Paste into: bitcoin-pow-qt.exe --datadir=[...]\btcw\data
+   - Click on 'File', 'Save as..'
+   - Select Type: all files
+   - Name it sender_wallet_qt.bat
+   - Click 'Save'
+
+7) Open sender_wallet_qt.bat
+8) Wait btcw node full sync
+9) Click on create new wallet
+10) Name it sender_wallet
+11) Go to Receive tab
+12) Click on New address, label 'source'
+13) Save the address in a txt document (starts with 1)
+14) Top up sender_wallet balance using 'source' address
+15) Wait 1 confirmation
+16) You have a positive balance in sender_wallet
+17) Close Bitcoin Core
+
+[BITCOINPOW CONF]
+
+18) Go to btcw/data folder, create a bitcoin-pow.conf file (as point 6, but with .conf instead of .bat), then paste into: 
+
+rpcuser=user
+rpcpassword=password
+rpcport=8989
+maxtxfee=30000
+
+19) Save bitcoin-pow as .conf file in 'btcw/data' folder
+
+
+[ADDRESSES]
+
+20) Create an addresses file (e.g: my_addresses.txt), and put your  mining wallet(s) addresses (MAX 2580) into, one per line. Optionally, you can also specify a label, 
+    separating it from the address using a '.':
+
+12tAfpMqDAdZTBiwPnxiY2pPFxBCbyDnoa.Right1
+1GspcmKR8mLxHCnjkx4wtq4nCpQgQ5EPgd.Right2
+1K6Vdsf7U9gUSivpTxvCt2A7UTN7g47jmJ.Right3
+12vJ3DkyE4LwwkcAodLvz4ThRDNxZD5HS4.Right4
+
+21) Move addresses.txt file to 'BitcoinPoWFuel' folder
+
+[RUN BTCW DAEMON]
+
+22) Go to 'btcw' folder
+23) Create sender_wallet_daemon.bat file in 'btcw' folder:
+    - Paste into: bitcoin-pow-d.exe --datadir=[...]\btcw\data
+24) Run bitcoin-powd.exe using sender_waller_daemon.bat (double click on it)
+25) Wait for full sync (progress=1.0000)
+26) Leave it running
+
+[RUN BITCOINPOWFUEL]
+
+27) Go to 'BitcoinPoWFuel' folder
+28) Create run.bat file:
+    - Paste into: 
+
+BitcoinPoWFuel.exe -walletdir D:\BTCW\sender_wallet_data_dir -conftarget 6 -estimatedfeemultiplier 1.05 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -addressespath D:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+
+29) Save as .bat file in 'BitcoinPoWFuel' folder
+30) Run BitcoinPoWFuel using run.bat (double click on .bat file) 🥂
+
+❔ You can find arguments and features of BitcoinPoWFuel here: https://github.com/fullerslab/BitcoinPoWFuel/blob/main/Readme
