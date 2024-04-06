@@ -19,7 +19,6 @@ https://github.com/bitcoin-pow/BitcoinPoW/releases
 
 [INFO]
 
-🔘 Transaction amount: 550μBTCW
 🔘 Dev fee: 3% (every 100 sent utxos, 3 are sent to developer wallet)
 🔬 Dev fee will ensure continued support of BitcoinPoWFuel, bug fixes, improvements and new releases.
 
@@ -82,6 +81,12 @@ Suspend sending when sent utxos is equal or greater than utxosarget value (e.g: 
 
 -maxfeerate (numeric)
 Max fee_rate limit (sat/vB), if network fee is greater than maxfeerate, no transactions will be send. Setting to 0 => unlimited (e.g: 35000)
+
+-amount (numeric)
+Single transaction amount in satoshi (e.g: 1000)(Min: 550)
+
+-beep (numeric)
+Emits beep if sent utxos are > 0 in a round (set 1 to enable, 0 to disable)
 
 -addressespath (string)
 Path to addresses.txt file (e.g: D:\BTCW\my_addresses.txt)
