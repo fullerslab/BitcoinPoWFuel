@@ -59,16 +59,13 @@ Create an addresses file (e.g: my_addresses.txt), and put your addresses (MAX 25
 
 [CONFIG]
 
-You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file containing these 12 arguments:
-
--walletdir (string)
-Directory of sender wallet (e.g: D:\BTCW\sender_wallet_data_dir)
+You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file containing these 13 arguments:
 
 -estimatedfeemultiplier (numeric)
 Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, to a value >1 to use increase it or to a value <1 to use a decreased value (e.g: 1)
 
--conftarget (numeric)
-Confirmation target in blocks (1-6)(if 6, BitcoinPoWFuel will use 6 blocks estimated fee) (e.g: 1)
+-avgfeeratenblocks (numeric)
+Amount of last blocks to be used in order to calculate average fee rate (Min: 1, Max: 12)
 
 -minfeerate (numeric)
 Min fee_rate limit (sat/vB), if network fee is smaller than minfeerate, BitcoinPoWFuel will use minfeerate. Setting to 0 => not set (e.g: 30000)
@@ -107,11 +104,11 @@ RPC server password (e.g: password)
 
 🔘 Windows (.bat)
 
-BitcoinPoWFuel.exe -walletdir D:\BTCW\sender_wallet_data_dir -conftarget 6 -estimatedfeemultiplier 1.05 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -beep 1 -amount 2000 -addressespath D:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+BitcoinPoWFuel.exe -avgfeeratenblocks 6 -estimatedfeemultiplier 1.05 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -beep 1 -amount 2000 -addressespath D:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 🔘 Linux (.sh)
 
-./BitcoinPoWFuel -walletdir /home/desktop/btcw/sender_wallet_data_dir -conftarget 4 -estimatedfeemultiplier 0.97 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -beep 0 -amount 1000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+./BitcoinPoWFuel -avgfeeratenblocks 6 -estimatedfeemultiplier 0.97 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -beep 0 -amount 1000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 [COMMANDS]
 
