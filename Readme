@@ -118,7 +118,7 @@ Pressing these keys will result in:
 'b' pressed => Balance: 17.09458004 BTCW (Estimated txs: 2391)(Run out in 29 send(s) or ~2 block(s))
 
 🔘 i => info
-'i' pressed => Utxos: 2135  Current height: 10557  Last send: 10556  Max fee_rate: 8900 sat/vB  Min fee_rate: not set  Forced fee_rate: not set  Confirmation target: 6 block(s)  Total spent: 5.30961707 BTCW (248694 miBTCW@tx)
+'i' pressed => Utxos: 2135  Current height: 10557  Last send: 10556  Max fee_rate: 8900 sat/vB  Min fee_rate: not set  Forced fee_rate: not set  Total spent: 5.30961707 BTCW (248694 miBTCW@tx)
 
 🔘 f => fee
 'f' pressed => Estimated network fee (6 block(s)): 8178 sat/vB (Send cost: 5.96376718 BTCW (2135 utxo(s)))  My fee: 7279 sat/vB (Send cost: 5.30904386 BTCW (2135 utxo(s)))
