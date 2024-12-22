@@ -128,11 +128,11 @@ RPC server password (e.g: password)
 
 🔘 Windows (.bat)
 
-BitcoinPoWFuel.exe -avgfeeratenblocks 6 -estimatedfeemultiplier 1.05 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -utxostarget 0 -beep 1 -amount 2000 -addressespath D:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+BitcoinPoWFuel.exe -avgfeeratenblocks 6 -estimatedfeemultiplier 1.05 -maxfeerate 25000 -minfeerate 0 -forcedfeerate 15000 -autobumpfee 0 -utxostarget 0 -beep 1 -amount 2000 -addressespath D:\BTCW\addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 🔘 Linux (.sh)
 
-./BitcoinPoWFuel -avgfeeratenblocks 6 -estimatedfeemultiplier 0.97 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -beep 0 -amount 1000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
+./BitcoinPoWFuel -avgfeeratenblocks 6 -estimatedfeemultiplier 0.97 -maxfeerate 12400 -minfeerate 0 -forcedfeerate 0 -utxostarget 250000 -autobumpfee 0 -beep 0 -amount 1000 -addressespath /home/desktop/btcw/addresses.txt -rpcip 127.0.0.1 -rpcport 8989 -rpcusername user -rpcpassword password
 
 [COMMANDS]
 
