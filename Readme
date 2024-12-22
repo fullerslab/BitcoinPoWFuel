@@ -50,16 +50,37 @@ bitcoin-powd.exe --datadir=$your_data_dir
 
 [ADDRESSES]
 
-Create an addresses file (e.g: my_addresses.txt), and put your addresses (MAX 2580) into, one per line. Optionally, you can also specify a label, separating it from the address using a '.':
+Create a .txt addresses file in two ways:
+
+1) Copy your addresses (MAX 2580) into, one per line. Optionally, you can also specify a label, separating it from the address using a '.':
 
 12tAfpMqDAdZTBiwPnxiY2pPFxBCbyDnoa.Right1
 1GspcmKR8mLxHCnjkx4wtq4nCpQgQ5EPgd.Right2
 1K6Vdsf7U9gUSivpTxvCt2A7UTN7g47jmJ.Right3
 12vJ3DkyE4LwwkcAodLvz4ThRDNxZD5HS4.Right4
 
+2) Copy the 'listaddressgroupings' rpc command output:
+
+[
+  [
+    [
+      "11ErPs1hWvFRp1d4tgqHm3AP96LeoQnGo",
+      0.00164000,
+      "1130"
+    ]
+  ],
+  [
+    [
+      "112684gFGweA51Vp8AyD2pKasysWXzxmCD",
+      0.00164000,
+      "1728"
+    ]
+  ]
+]
+
 [CONFIG]
 
-You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file containing these 13 arguments:
+You can start BitcoinPoWFuel without arguments, setting them at every startup (pressing 'c' to quick start), or create a .bat (Windows) or .sh (Linux) file containing these 14 arguments:
 
 -estimatedfeemultiplier (numeric)
 Increase/decrease the current network fee: set it to 1 to use the estimated fee as it, to a value >1 to use increase it or to a value <1 to use a decreased value (e.g: 1)
@@ -78,6 +99,9 @@ Suspend sending when sent utxos is equal or greater than utxosarget value (e.g: 
 
 -maxfeerate (numeric)
 Max fee_rate limit (sat/vB), if network fee is greater than maxfeerate, no transactions will be send. Setting to 0 => unlimited (e.g: 35000)
+
+-autobumpfee
+Bump fee of previous stuck transaction(s), with a maximum limit fee (0 => disabled, > 0 => enabled) (e.g: 1000 => enabled, bump fee up to 1000 sat/vB)
 
 -amount (numeric)
 Single transaction amount in satoshi (e.g: 1000)(Min: 550)
@@ -123,11 +147,24 @@ Pressing these keys will result in:
 🔘 f => fee
 'f' pressed => Estimated network fee (6 block(s)): 8178 sat/vB (Send cost: 5.96376718 BTCW (2135 utxo(s)))  My fee: 7279 sat/vB (Send cost: 5.30904386 BTCW (2135 utxo(s)))
 
-🔘 a => show addresses
-'a' pressed => Addresses [4]:
+🔘 a => show recipient addresses
+'a' pressed => Addresses:
 
 🔘 q => quit
 'q' pressed => Shutting down...
+
+🔘 t => top up sender wallet
+
+1: 1E2KXjd7FqPK7Ys3ExAAEJf6eAHgrH4uNx (3.89129431 BTCW)
+2: 1L2E5k3mvR7aqDWM9jquMoT6b4ZEpRBR1Y (3.88758302 BTCW)
+3: 1SnpJs34Tdxv2eh5NRqSgWYCbzLYbC3SF (2.74144606 BTCW)
+4: 1Cc7hMPTz3D3wArzFjN4f6NeJdQjBtvo7i (2.64033684 BTCW)
+5: 19WpS4S29d2r6b4DA6hkGHbuP7nrAfvRAt (2.52233593 BTCW)
+6: 1Kz6zPXv2ffjRxYwqGAwscBp29fQhVz9vQ (2.42121403 BTCW)
+7: 1Dtig4SWM5hBeABreCt5KAY5o25xDhUV35 (2.00545037 BTCW)
+8: 1JSkd5SXkxFUrRwQ2BFSNg5XtwpVjYNHJ5 (1.80316853 BTCW)
+9: 11TRU7XuPSvwWw73bwx8D7fQMCkeYWc6Q (0.00000000 BTCW)
+10: 11261jfG9dCs6La4N4xWxuVKwdzYFJmGb7 (0.00000000 BTCW)
 
 [DOWNLOAD]
 
